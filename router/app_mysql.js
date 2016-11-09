@@ -6,14 +6,14 @@ var bodyParser = require("body-parser");
 var mysql = require('mysql');
 //multer : file upload
 var connection = mysql.createConnection({
-    /*host : 'localhost',
-    user : 'root',
-    password : '1234',
-    database : 'sourgrape'*/
     host : 'localhost',
     user : 'root',
-    password : 'hywoong94!',
+    password : '1234',
     database : 'sourgrape'
+    /*host : 'localhost',
+    user : 'root',
+    password : 'hywoong94!',
+    database : 'sourgrape'*/
 });
 var app = express();
 
@@ -30,14 +30,14 @@ connection.connect(function (err){
    }
 });
 
-app.get('/test', function (req,res) {
-    var sql = 'select * from game';
+app.get('/games', function (req,res) {
+    var sql = 'select GameID,GameTitle from game';
     connection.query(sql,function (err, rows, fields){
-        //res.send(rows);
-        res.json(rows);
+        res.send(rows);
+        //res.json(rows);
     });
 });
 
-app.listen(3000,function(){
-   console.log("connection 3000 port");
+app.listen(4200,function(){
+   console.log("connection 4200 port");
 });

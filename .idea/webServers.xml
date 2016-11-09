@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a78e25ca-9cc1-405b-9e56-6e31d11bbed5" name="sourgrape" url="http://52.78.156.169">
+        <fileTransfer host="52.78.156.169" port="22" rootFolder="/home/ec2-user" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
