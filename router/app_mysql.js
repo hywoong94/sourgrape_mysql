@@ -18,7 +18,7 @@ var connection = mysql.createConnection({
 var app = express();
 
 app.use(bodyParser.urlencoded({extended:false}));
-app.set('port', process.env.port || 3000);
+app.set('port', process.env.port || 4200);
 app.locals.pretty = true;
 
 
@@ -39,6 +39,6 @@ app.get('/games', function (req,res) {
     });
 });
 
-/*app.listen(4200,function(){
+app.listen(app.get('port'),function(){
    console.log("connection 4200 port");
-});*/
+});
