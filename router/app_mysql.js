@@ -17,6 +17,13 @@ var connection = mysql.createConnection({
 });
 var app = express();
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+res.setHeader('Cache-Control', 'no-cache');
+next();
+});
 app.use(bodyParser.urlencoded({extended: false}));
 app.set('port', process.env.port || 3000);
 app.locals.pretty = true;
@@ -34,12 +41,6 @@ connection.connect(function (err) {
 app.get('/games', function (req, res) {
     var sql = 'select GameID,GameTitle from game';
     connection.query(sql, function (err, rows, fields) {
-        res.setHeader('Access-Control_Allow_Origin','*');
-        res.setHeader('Access-Control_Allow_Methods','POST, PUT, DELETE, GET');
-        res.setHeader('Access-Control_Allow_Headers','Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
-
-        res.setHeader('Cache-Control', 'no-cache');
-        next();
         res.send(rows);
         //res.json(rows);
     });
