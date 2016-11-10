@@ -39,7 +39,7 @@ connection.connect(function (err) {
 });
 
 app.get('/games', function (req, res) {
-    var sql = 'select GameID,GameTitle from game';
+    var sql = 'select * from game';
     connection.query(sql, function (err, rows, fields) {
         //res.send(rows);
         res.json(rows);
