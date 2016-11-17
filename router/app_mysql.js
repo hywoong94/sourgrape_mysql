@@ -45,6 +45,14 @@ app.get('/games', function (req, res) {
         res.json(rows);
     });
 });
+app.get('/game-rate', function (req, res) {
+    var sql = 'select * from game_rate';
+    connection.query(sql, function (err, rows, fields) {
+        //res.send(rows);
+        res.json(rows);
+    });
+});
+
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
