@@ -53,14 +53,14 @@ app.get('/game-rate', function (req, res) {
     });
 });
 app.get('/game/:title', function (req, res) {
-    var sql = 'select * from game where title = \'' + req.params.title + '\'';
+    var sql = 'select * from game where title = "' + req.params.title + '"';
     connection.query(sql, function (err, rows, fields) {
         //res.send(rows);
         res.json(rows);
     });
 });
 app.get('/game-rate/:title', function (req, res) {
-    var sql = 'select gr_title, gr_id, round(avg(rate)/2,1) as rate, rate_date from game_rate where gr_title = \'' + req.params.title + '\'';
+    var sql = 'select gr_title, gr_id, round(avg(rate)/2,1) as rate, rate_date from game_rate where gr_title = "' + req.params.title + '"';
     connection.query(sql, function (err, rows, fields) {
         //res.send(rows);
         res.json(rows);
