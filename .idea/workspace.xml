@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9bcdc7b1-f1e0-4f99-9efd-fa8cd69daf7e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/app_mysql.js" afterPath="$PROJECT_DIR$/router/app_mysql.js" />
     </list>
     <ignored path="final_sourgrape.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+            <state relative-caret-position="644">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -229,7 +228,7 @@
       <workItem from="1479378776331" duration="1055000" />
       <workItem from="1479379914346" duration="98000" />
       <workItem from="1479472094717" duration="855000" />
-      <workItem from="1479481059244" duration="897000" />
+      <workItem from="1479481059244" duration="989000" />
     </task>
     <task id="LOCAL-00001" summary="포트 번호 변경">
       <created>1478704234930</created>
@@ -308,11 +307,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479472769587</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="game/:title&#10;game-rate/:title 추가.">
+      <created>1479481993711</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1479481993711</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12951000" />
+    <option name="totallyTimeSpent" value="13043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="603" y="0" width="1077" height="1010" extended-state="0" />
@@ -360,7 +366,8 @@
     <MESSAGE value="gamer-rate 라우터 추가" />
     <MESSAGE value="gamer-rate 타이틀별 평균점수 출력" />
     <MESSAGE value="gamer-rate 타이틀별 평균점수 출력 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="gamer-rate 타이틀별 평균점수 출력 수정" />
+    <MESSAGE value="game/:title&#10;game-rate/:title 추가." />
+    <option name="LAST_COMMIT_MESSAGE" value="game/:title&#10;game-rate/:title 추가." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -450,8 +457,8 @@
     <entry file="file://$PROJECT_DIR$/../nodejs/basicServer.js" />
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="67" column="3" selection-start-line="67" selection-start-column="3" selection-end-line="67" selection-end-column="3" />
+        <state relative-caret-position="644">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
