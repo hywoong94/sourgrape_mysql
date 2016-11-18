@@ -46,7 +46,7 @@ app.get('/games', function (req, res) {
     });
 });
 app.get('/game-rate', function (req, res) {
-    var sql = 'select * from game_rate';
+    var sql = 'SELECT gr_title, round(avg(rate)/2,1) FROM game_rate group by gr_title;';
     connection.query(sql, function (err, rows, fields) {
         //res.send(rows);
         res.json(rows);
