@@ -66,7 +66,13 @@ app.get('/game-rate/:title', function (req, res) {
         res.json(rows);
     });
 });
-
+app.get('/search/:keyword', function (req, res) {
+    var sql = 'select * from game where title like "%' + req.params.keyword + '%"';
+    connection.query(sql, function (err, rows, fields) {
+        //res.send(rows);
+        res.json(rows);
+    });
+});
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
