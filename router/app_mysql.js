@@ -73,6 +73,27 @@ app.get('/search/:keyword', function (req, res) {
         res.json(rows);
     });
 });
+app.get('/game-rate/:title/:id', function (req, res) {
+    var sql = 'select * from game_rate where gr_title = "' + req.params.title + '" AND gr_id = "' + req.params.id + '"';
+    connection.query(sql, function (err, rows, fields) {
+        //res.send(rows);
+        res.json(rows);
+    });
+});
+app.get('/game-rate/:id', function (req, res) {
+    var sql = 'select * from game_rate where gr_id = "' + req.params.id + '"';
+    connection.query(sql, function (err, rows, fields) {
+        //res.send(rows);
+        res.json(rows);
+    });
+});
+app.get('/user/:id', function (req, res) {
+    var sql = 'select * from user where id = "' + req.params.id + '"';
+    connection.query(sql, function (err, rows, fields) {
+        //res.send(rows);
+        res.json(rows);
+    });
+});
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
