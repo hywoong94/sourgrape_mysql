@@ -98,7 +98,7 @@ app.get('/user/:id', function (req, res) {
     var user = {
         'id' : req.body.id,
         'password' : req.body.password,
-        'name' : reqbody.name
+        'name' : req.body.name
     }
     //var sql = 'insert into user values ("' + req.body.id + '", "' + req.body.password + '", "' + req.body.name + '")';
     var sql = 'insert into user set ?';
