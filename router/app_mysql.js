@@ -95,7 +95,8 @@ app.get('/user/:id', function (req, res) {
         //res.send(rows);
         res.json(rows);
     });
-});app.post('/users', function (req, res) {
+});
+app.post('/users', function (req, res) {
     var user = {
         "id" : req.body.id,
         "password" : req.body.password,
@@ -112,6 +113,13 @@ app.get('/user/:id', function (req, res) {
                 throw err;
             });
         }// if err
+    });
+});
+app.get('/users/:id/:num', function (req, res) {
+    var sql = 'select * from user where id not "' + req.params.id + '" limit ' + req.params.num;
+    connection.query(sql, function (err, rows, fields) {
+        //res.send(rows);
+        res.json(rows);
     });
 });
 
