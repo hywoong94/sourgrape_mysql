@@ -9,7 +9,8 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '1234',
-    database: 'sourgrape'
+    database: 'testhost'
+    //database: 'sourgrape'
     /*host : 'localhost',
      user : 'root',
      password : 'hywoong94!',
@@ -80,7 +81,7 @@ app.get('/game-rate/:title/:id', function (req, res) {
         res.json(rows);
     });
 });
-app.get('/game-rate/:id', function (req, res) {
+app.get('/game-rates/:id', function (req, res) {
     var sql = 'select * from game_rate where gr_id = "' + req.params.id + '"';
     connection.query(sql, function (err, rows, fields) {
         //res.send(rows);
