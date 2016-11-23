@@ -96,14 +96,21 @@ app.get('/user/:id', function (req, res) {
     });
 });app.post('/users', function (req, res) {
     var user = {
-        'id' : req.body.id,
-        'password' : req.body.password,
-        'name' : req.body.name
+        "id" : req.body.id,
+        "password" : req.body.password,
+        "name" : req.body.name
     }
-    //var sql = 'insert into user values ("' + req.body.id + '", "' + req.body.password + '", "' + req.body.name + '")';
-    var sql = 'insert into user set ?';
+    var sql = 'insert into user values ("' + req.body.id + '", "' + req.body.password + '", "' + req.body.name + '")';
+    //var sql = 'insert into user set ?';
     connection.query(sql, user, function (err, result) {
         //res.send(rows);
+            if (err) {
+            console.error(err);
+            connection.rollback(function () {
+                console.error('rollback error');
+                throw err;
+            });
+        }// if err
     });
 });
 
