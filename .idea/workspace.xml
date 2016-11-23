@@ -29,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="121" column="23" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+            <state relative-caret-position="546">
+              <caret line="117" column="48" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -239,7 +239,7 @@
       <workItem from="1479898257307" duration="482000" />
       <workItem from="1479898766880" duration="6673000" />
       <workItem from="1479907953194" duration="785000" />
-      <workItem from="1479909169622" duration="577000" />
+      <workItem from="1479909169622" duration="822000" />
     </task>
     <task id="LOCAL-00001" summary="포트 번호 변경">
       <created>1478704234930</created>
@@ -409,11 +409,18 @@
       <option name="project" value="LOCAL" />
       <updated>1479908613609</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="users/id/num 추가">
+      <created>1479909769601</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1479909769601</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25032000" />
+    <option name="totallyTimeSpent" value="25277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -473,7 +480,8 @@
     <MESSAGE value="post /users 수정3" />
     <MESSAGE value="avg 나오는 부분들 수정" />
     <MESSAGE value="avg 나오는 부분들 round 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="avg 나오는 부분들 round 추가" />
+    <MESSAGE value="users/id/num 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="users/id/num 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -653,8 +661,8 @@
     <entry file="file://$PROJECT_DIR$/../nodejs/basicServer.js" />
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="121" column="23" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+        <state relative-caret-position="546">
+          <caret line="117" column="48" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>

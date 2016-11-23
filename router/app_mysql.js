@@ -116,7 +116,7 @@ app.post('/users', function (req, res) {
     });
 });
 app.get('/users/:id/:num', function (req, res) {
-    var sql = 'select * from user where id not "' + req.params.id + '" limit ' + req.params.num;
+    var sql = 'select * from user where id != "' + req.params.id + '" limit ' + req.params.num;
     connection.query(sql, function (err, rows, fields) {
         //res.send(rows);
         res.json(rows);
