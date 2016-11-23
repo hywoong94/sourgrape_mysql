@@ -26,6 +26,7 @@ res.setHeader('Cache-Control', 'no-cache');
 next();
 });
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 app.set('port', process.env.port || 3000);
 app.locals.pretty = true;
 
