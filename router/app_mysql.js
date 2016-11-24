@@ -18,13 +18,14 @@ var connection = mysql.createConnection({
 });
 var app = express();
 
-app.use((req, res, next) => {
+app.use((req, res, next) = > {
     res.setHeader('Access-Control-Allow-Origin', '*');
 res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
 res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 res.setHeader('Cache-Control', 'no-cache');
 next();
-});
+})
+;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.set('port', process.env.port || 3000);
@@ -98,15 +99,15 @@ app.get('/user/:id', function (req, res) {
 });
 app.post('/users', function (req, res) {
     var user = {
-        "id" : req.body.id,
-        "password" : req.body.password,
-        "name" : req.body.name
+        "id": req.body.id,
+        "password": req.body.password,
+        "name": req.body.name
     }
     var sql = 'insert into user values ("' + req.body.id + '", "' + req.body.password + '", "' + req.body.name + '")';
     //var sql = 'insert into user set ?';
     connection.query(sql, user, function (err, result) {
         //res.send(rows);
-            if (err) {
+        if (err) {
             console.error(err);
             connection.rollback(function () {
                 console.error('rollback error');
@@ -121,6 +122,15 @@ app.get('/users/:id/:num', function (req, res) {
         //res.send(rows);
         res.json(rows);
     });
+});
+app.get('/cal-simScore', function (req, res) {
+    var arryUser;
+    connection.query(sql, user, function (err, rows, fileds){
+        arryUser = rows.json;
+    });
+    for(var i = 0; i < arryUser.length; i++){
+        res.send(arryUser[i]);
+    }
 });
 
 app.listen(app.get('port'), function () {
