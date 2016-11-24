@@ -6,15 +6,16 @@ var bodyParser = require("body-parser");
 var mysql = require('mysql');
 //multer : file upload
 var connection = mysql.createConnection({
-    host: 'localhost',
+    /*host: 'localhost',
     user: 'root',
     password: '1234',
     database: 'testhost'
-    //database: 'sourgrape'
-    /*host : 'localhost',
+    //database: 'sourgrape'*/
+
+     host : 'localhost',
      user : 'root',
      password : 'hywoong94!',
-     database : 'sourgrape'*/
+     database : 'sourgrape'
 });
 var app = express();
 
@@ -122,15 +123,19 @@ app.get('/users/:id/:num', function (req, res) {
         res.json(rows);
     });
 });
-/*app.get('/cal-simScore', function (req, res) {
-    var arryUser;
+app.get('/cal-simScore', function (req, res) {
+    var arryK;
+    var arryLr
+    var sql = 'select * from user';
     connection.query(sql, user, function (err, rows, fileds){
         arryUser = rows.json;
     });
+
     for(var i = 0; i < arryUser.length; i++){
-        res.send(arryUser[i]);
+        res.send(arryK[i]);
+        res.send("<br>");
     }
-});*/
+});
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
