@@ -44,7 +44,6 @@ connection.connect(function (err) {
 app.get('/games', function (req, res) {
     var sql = 'select * from game';
     connection.query(sql, function (err, rows, fields) {
-        //res.send(rows);
         res.json(rows);
     });
 });
@@ -102,7 +101,7 @@ app.post('/users', function (req, res) {
         "id": req.body.id,
         "password": req.body.password,
         "name": req.body.name
-    }
+    };
     var sql = 'insert into user values ("' + req.body.id + '", "' + req.body.password + '", "' + req.body.name + '")';
     //var sql = 'insert into user set ?';
     connection.query(sql, user, function (err, result) {
