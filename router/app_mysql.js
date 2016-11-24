@@ -11,11 +11,6 @@ var connection = mysql.createConnection({
     password: '1234',
     database: 'testhost'
     //database: 'sourgrape'*/
-
-     /*host : 'localhost',
-     user : 'root',
-     password : 'hywoong94!',
-     database : 'sourgrape'*/
 });
 var app = express();
 
@@ -125,15 +120,15 @@ app.get('/users/:id/:num', function (req, res) {
 });
 app.get('/cal-simScore', function (req, res) {
     var arryK;
-    var arryLr
+    var arryL;
     var sql = 'select * from user';
-    connection.query(sql, user, function (err, rows, fileds){
-        arryUser = rows.json;
+    connection.query(sql, function (err, rows, fileds){
+        arryK = rows.json;
     });
 
     for(var i = 0; i < arryUser.length; i++){
         res.send(arryK[i]);
-        res.send("<br>");
+        res.send('<br>');
     }
 });
 
