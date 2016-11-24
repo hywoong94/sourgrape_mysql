@@ -24,8 +24,8 @@ res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
 res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 res.setHeader('Cache-Control', 'no-cache');
 next();
-})
-;
+});
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.set('port', process.env.port || 3000);
@@ -123,7 +123,7 @@ app.get('/users/:id/:num', function (req, res) {
         res.json(rows);
     });
 });
-app.get('/cal-simScore', function (req, res) {
+/*app.get('/cal-simScore', function (req, res) {
     var arryUser;
     connection.query(sql, user, function (err, rows, fileds){
         arryUser = rows.json;
@@ -131,7 +131,7 @@ app.get('/cal-simScore', function (req, res) {
     for(var i = 0; i < arryUser.length; i++){
         res.send(arryUser[i]);
     }
-});
+});*/
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
