@@ -18,7 +18,7 @@ var connection = mysql.createConnection({
 });
 var app = express();
 
-app.use((req, res, next) = > {
+app.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', '*');
 res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
 res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
