@@ -118,7 +118,7 @@ app.get('/users/:id/:num', function (req, res) {
         res.json(rows);
     });
 });
-app.get('/cal-simScore', function (req, res) {
+/*app.get('/cal-simScore', function (req, res) {
     var arryK;
     var arryL;
     var sql = 'select * from user';
@@ -130,7 +130,7 @@ app.get('/cal-simScore', function (req, res) {
         res.send(arryK[i]);
         res.send('<br>');
     }
-});
+});*/
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
