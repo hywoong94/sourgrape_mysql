@@ -109,11 +109,15 @@ app.post('/users', function (req, res) {
     });
 });
 app.get('/users/:id/:num', function (req, res) {
-    var sql = 'select * from user where id != "' + req.params.id + '" limit ' + req.params.num;
+    var sql = 'select a.* from ' +
+        '(select * from user ) as a ' +
+        'join ' +
+        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
+        'on a.id in (b.l_id);';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
-}); // 나중에 없어지는것.
+});
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bcdc7b1-f1e0-4f99-9efd-fa8cd69daf7e" name="Default" comment="change database testhost to sourgrape">
+    <list default="true" id="9bcdc7b1-f1e0-4f99-9efd-fa8cd69daf7e" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/123.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/app_mysql.js" afterPath="$PROJECT_DIR$/router/app_mysql.js" />
     </list>
@@ -29,8 +30,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="333">
+              <caret line="119" column="3" selection-start-line="119" selection-start-column="3" selection-end-line="119" selection-end-column="3" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -242,7 +243,7 @@
       <workItem from="1479907953194" duration="785000" />
       <workItem from="1479909169622" duration="887000" />
       <workItem from="1479971649044" duration="31225000" />
-      <workItem from="1480071281942" duration="15870000" />
+      <workItem from="1480071281942" duration="19725000" />
     </task>
     <task id="LOCAL-00001" summary="포트 번호 변경">
       <created>1478704234930</created>
@@ -510,11 +511,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480082123192</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="delete simScore">
+      <created>1480095106874</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1480095106874</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72437000" />
+    <option name="totallyTimeSpent" value="76292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -552,7 +560,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="gamer-rate 타이틀별 평균점수 출력 수정" />
     <MESSAGE value="game/:title&#10;game-rate/:title 추가." />
     <MESSAGE value="game/:title&#10;game-rate/:title 수정" />
     <MESSAGE value="game/:title&#10;game-rate/:title 수정2" />
@@ -577,7 +584,8 @@
     <MESSAGE value="cal-simScore delete" />
     <MESSAGE value="change database sourgrape to testhost" />
     <MESSAGE value="change database testhost to sourgrape" />
-    <option name="LAST_COMMIT_MESSAGE" value="change database testhost to sourgrape" />
+    <MESSAGE value="delete simScore" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete simScore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -779,8 +787,8 @@
     <entry file="file://$PROJECT_DIR$/../nodejs/basicServer.js" />
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="333">
+          <caret line="119" column="3" selection-start-line="119" selection-start-column="3" selection-end-line="119" selection-end-column="3" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
