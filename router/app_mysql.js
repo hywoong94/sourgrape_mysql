@@ -8,7 +8,7 @@ var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '1234',
+    //password: '1234',
     database: 'testhost'
     // database: 'sourgrape'
 
@@ -36,6 +36,7 @@ app.locals.pretty = true;
 connection.connect(function (err) {
     if (err) {
         console.log("Error Connecting DataBase ...\n");
+        console.log(err.toString());
     }
     else {
         console.log("DataBase is Connected !!!\n");
