@@ -7,19 +7,24 @@ var mysql = require('mysql');
 //multer : file upload
 var connection = mysql.createConnection({
     host: 'localhost',
+     user: 'root',
+     password: '1234',
+     //database: 'testhost'
+     database: 'sourgrape'
+
+    /*host: 'localhost',
     user: 'root',
-    password: '1234',
-    database: 'testhost'
-    //database: 'sourgrape'*/
+    password: 'hywoong94!',
+    database: 'sourgrape'*/
 });
 var app = express();
 
-app.use(function(req, res, next){
+app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
-res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
-res.setHeader('Cache-Control', 'no-cache');
-next();
+    res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+    res.setHeader('Cache-Control', 'no-cache');
+    next();
 });
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -118,19 +123,58 @@ app.get('/users/:id/:num', function (req, res) {
         res.json(rows);
     });
 });
-/*app.get('/cal-simScore', function (req, res) {
-    var arryK;
-    var arryL;
-    var sql = 'select * from user';
-    connection.query(sql, function (err, rows, fileds){
-        arryK = rows.json;
+app.get('/cal-simScore', function (req, res) {
+    var arryK = [];
+    var arryL = [];
+    var sql = 'select id from user';
+    connection.query(sql, function (err, rows, fileds) {
+        for (var i = 0; i < rows.length; i++) {
+            arryK.push(rows[i]);
+            arryL.push(rows[i]);
+        }
+        var simScore = '';
+        for(var k = 0; k < arryK.length; k++) {
+            for( var l = 0; l < arryL.length; l++) {
+                if(k < l) {
+                    simScore +=  arryK[k].id + ', ' +  arryL[l].id + ', ' + calculSimScore(arryK[k].id, arryL[l].id) + '<br>';
+                }
+            }
+        }
+        res.send(simScore);
     });
-
-    for(var i = 0; i < arryUser.length; i++){
-        res.send(arryK[i]);
-        res.send('<br>');
-    }
-});*/
+});
+function calculSimScore(k_id, l_id){
+    sql = 'select exceptAVG.game_title, k, k_rate, l, l_rate, avgRate ' +
+        'from ' +
+        '(' +
+        'SELECT KT.gr_title as game_title , KT.gr_id as k, KT.rate as k_rate, LT.gr_id as l, LT.rate as l_rate ' +
+        'FROM ' +
+        '(select * from game_rate where gr_id = "' + k_id + '") as KT , ' +
+        '(select * from game_rate where gr_id = "' + l_id + '") as LT where KT.gr_title in (LT.gr_title)' +
+        ') as exceptAVG ' +
+        'join ' +
+        '(select gr_title, round(avg(rate),1) as avgRate from game_rate group by gr_title) as rateAVG ' +
+        'on exceptAVG.game_title = rateAVG.gr_title';
+    var result;
+    connection.query(sql,  function (err, rows) {
+        var k;
+        var l;
+        var avg;
+        var sum = 0;
+        var k_deviation = 0;
+        var l_deviation = 0;
+        for(var i = 0; i < rows.length; i++){
+            k = rows[i].k_rate;
+            l = rows[i].l_rate;
+            avg = rows[i].avgRate;
+            sum += (k - avg) * (l - avg);
+            k_deviation += (k - avg)^2;
+            l_deviation += (l - avg)^2;
+        }
+       //return (sum / (Math.sqrt(k_deviation) * Math.sqrt(l_deviation)));
+         return  (sum / (Math.sqrt(k_deviation) * Math.sqrt(l_deviation)));
+    });
+}
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
