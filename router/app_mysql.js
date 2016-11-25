@@ -119,6 +119,12 @@ app.get('/users/:id/:num', function (req, res) {
         res.json(rows);
     });
 });
+app.get('/similar/:target/:compare', function (req, res) {
+    var sql = 'select * from sim_score where k_id = "' + req.params.target + '" AND l_id = "' + req.params.compare + '"';
+    connection.query(sql, function (err, rows, fields) {
+        res.json(rows);
+    });
+});
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
