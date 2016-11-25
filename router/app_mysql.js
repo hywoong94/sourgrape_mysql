@@ -9,8 +9,8 @@ var connection = mysql.createConnection({
     host: 'localhost',
      user: 'root',
      password: '1234',
-     database: 'testhost'
-     //database: 'sourgrape'
+     //database: 'testhost'
+     database: 'sourgrape'
 
     /*host: 'localhost',
     user: 'root',
