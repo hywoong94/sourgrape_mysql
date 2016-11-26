@@ -51,7 +51,7 @@ app.get('/games', function (req, res) {
     });
 });
 
-// 게임 목록과 그에 대한 평균을 보내준다.
+// 게임 목록과 그에 대한 평균을 보내준다. (전체랭킹)
 app.get('/game-rate', function (req, res) {
     var sql = 'SELECT gr_title, gr_id, round(avg(rate),1) as rate, rate_date FROM game_rate group by gr_title order by rate desc;';
     connection.query(sql, function (err, rows, fields) {
@@ -109,12 +109,19 @@ app.get('/user/:id', function (req, res) {
 });
 
 // 아이디에 해당하는 유저와 유사도가 비슷한 유저들을 num만큼 보내준다.
+// app.get('/users/:id/:num', function (req, res) {
+//     var sql = 'select a.* from ' +
+//         '(select * from user ) as a ' +
+//         'join ' +
+//         '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
+//         'on a.id in (b.l_id);';
+//     connection.query(sql, function (err, rows, fields) {
+//         res.json(rows);
+//     });
+// });
+// 테에에에스트 ㅋ
 app.get('/users/:id/:num', function (req, res) {
-    var sql = 'select a.* from ' +
-        '(select * from user ) as a ' +
-        'join ' +
-        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
-        'on a.id in (b.l_id);';
+    var sql = 'select * from user where id != "' + req.params.id + '" limit ' + req.params.num;
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });

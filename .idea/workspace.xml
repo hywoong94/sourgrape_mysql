@@ -29,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="149" column="9" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+            <state relative-caret-position="340">
+              <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -244,7 +244,7 @@
       <workItem from="1479971649044" duration="31225000" />
       <workItem from="1480071281942" duration="20201000" />
       <workItem from="1480112052935" duration="2205000" />
-      <workItem from="1480169546635" duration="3302000" />
+      <workItem from="1480169546635" duration="4503000" />
     </task>
     <task id="LOCAL-00001" summary="포트 번호 변경">
       <created>1478704234930</created>
@@ -554,11 +554,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480116376888</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="DB 실데이터베이스 전환&#10;주석추가!!!">
+      <created>1480172905558</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1480172905558</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82275000" />
+    <option name="totallyTimeSpent" value="83476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -596,7 +603,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="db sourgrape -&gt; testhost로 변경" />
     <MESSAGE value="post /users 추가" />
     <MESSAGE value="post /users 수정" />
     <MESSAGE value="post /users 수정2" />
@@ -621,7 +627,8 @@
     <MESSAGE value="db 연결 수정" />
     <MESSAGE value="db 연결 수정 잘되던게 왜 안될까.." />
     <MESSAGE value="DB 연결에는 이상 없었음. (mysql 권한 추가)&#10;simiar/:target/:comapre 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="DB 연결에는 이상 없었음. (mysql 권한 추가)&#10;simiar/:target/:comapre 추가" />
+    <MESSAGE value="DB 실데이터베이스 전환&#10;주석추가!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB 실데이터베이스 전환&#10;주석추가!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -843,8 +850,8 @@
     <entry file="file://$PROJECT_DIR$/../nodejs/basicServer.js" />
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="149" column="9" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+        <state relative-caret-position="340">
+          <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
