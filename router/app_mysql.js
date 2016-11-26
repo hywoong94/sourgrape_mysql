@@ -9,8 +9,8 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '1234',
-    database: 'testhost'
-    // database: 'sourgrape'
+    // database: 'testhost'
+    database: 'sourgrape'
 
     // host: 'localhost',
     // user: 'root',
@@ -43,42 +43,55 @@ connection.connect(function (err) {
     }
 });
 
+// 모든 게임 목록을 보내준다.
 app.get('/games', function (req, res) {
     var sql = 'select * from game';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 게임 목록과 그에 대한 평균을 보내준다.
 app.get('/game-rate', function (req, res) {
     var sql = 'SELECT gr_title, gr_id, round(avg(rate),1) as rate, rate_date FROM game_rate group by gr_title order by rate desc;';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 타이틀에 해당하는 게임 정보를 보내준다.
 app.get('/game/:title', function (req, res) {
     var sql = 'select * from game where title = "' + req.params.title + '"';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 타이틀에 해당하는 게임 평가 정보와 평균을 보내준다.
 app.get('/game-rate/:title', function (req, res) {
     var sql = 'select gr_title, gr_id, round(avg(rate),1) as rate, rate_date from game_rate where gr_title = "' + req.params.title + '"';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 키워드로 시작하는 게임정보를 보내준다.
 app.get('/search/:keyword', function (req, res) {
     var sql = 'select * from game where title like "%' + req.params.keyword + '%"';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 타이틀과 아이디에 해당하는 게임 평가 점수를 보내준다.
 app.get('/game-rate/:title/:id', function (req, res) {
     var sql = 'select * from game_rate where gr_title = "' + req.params.title + '" AND gr_id = "' + req.params.id + '"';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 해당하는 아이디가 매긴 모든 게임 평가를 보내준다.
 app.get('/game-rates/:id', function (req, res) {
     var sql = 'select * from game_rate where gr_id = "' + req.params.id + '"';
     connection.query(sql, function (err, rows, fields) {
@@ -86,12 +99,36 @@ app.get('/game-rates/:id', function (req, res) {
         res.json(rows);
     });
 });
+
+// 아이디에 해당하는 유저의 정보를 보내준다.
 app.get('/user/:id', function (req, res) {
     var sql = 'select * from user where id = "' + req.params.id + '"';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 아이디에 해당하는 유저와 유사도가 비슷한 유저들을 num만큼 보내준다.
+app.get('/users/:id/:num', function (req, res) {
+    var sql = 'select a.* from ' +
+        '(select * from user ) as a ' +
+        'join ' +
+        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
+        'on a.id in (b.l_id);';
+    connection.query(sql, function (err, rows, fields) {
+        res.json(rows);
+    });
+});
+
+// 유사도 점수를 target과 compare에 해당하는 레코드를 보내준다.
+app.get('/similar/:target/:compare', function (req, res) {
+    var sql = 'select * from sim_score where k_id = "' + req.params.target + '" AND l_id = "' + req.params.compare + '"';
+    connection.query(sql, function (err, rows, fields) {
+        res.json(rows);
+    });
+});
+
+// 유저의 정보를 입력한다.
 app.post('/users', function (req, res) {
     var user = {
         "id": req.body.id,
@@ -109,22 +146,23 @@ app.post('/users', function (req, res) {
         }// if err
     });
 });
-app.get('/users/:id/:num', function (req, res) {
-    var sql = 'select a.* from ' +
-        '(select * from user ) as a ' +
-        'join ' +
-        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
-        'on a.id in (b.l_id);';
-    connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
-    });
-});
-app.get('/similar/:target/:compare', function (req, res) {
-    var sql = 'select * from sim_score where k_id = "' + req.params.target + '" AND l_id = "' + req.params.compare + '"';
-    connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
-    });
-});
+
+// 진행중...
+app.post('/game-ratetest', function (req, res) {
+    var game_rate = {
+        "id": req.body.id,
+        "title": req.body.title,
+        "rate": req.body.rate
+        // "date" : req.body.date
+    };
+    var sql = 'insert into game_rate values (?,?,?)';
+    // connection.query(sql, req.params.title, req.params.id, req.params.rate,   function (err, fields) {
+    //     if(!err){
+    //         res.json(game_rate);
+    //     }
+    // });
+    res.json(game_rate);
+}); // 일단 나중에....
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
