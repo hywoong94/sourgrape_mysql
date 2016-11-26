@@ -9,8 +9,8 @@ var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '1234',
-    // database: 'testhost'
-    database: 'sourgrape'
+    database: 'testhost'
+    // database: 'sourgrape'
 
     // host: 'localhost',
     // user: 'root',
@@ -109,23 +109,24 @@ app.get('/user/:id', function (req, res) {
 });
 
 // 아이디에 해당하는 유저와 유사도가 비슷한 유저들을 num만큼 보내준다.
-// app.get('/users/:id/:num', function (req, res) {
-//     var sql = 'select a.* from ' +
-//         '(select * from user ) as a ' +
-//         'join ' +
-//         '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
-//         'on a.id in (b.l_id);';
-//     connection.query(sql, function (err, rows, fields) {
-//         res.json(rows);
-//     });
-// });
-// 테에에에스트 ㅋ
 app.get('/users/:id/:num', function (req, res) {
-    var sql = 'select * from user where id != "' + req.params.id + '" limit ' + req.params.num;
+    var sql = 'select a.* from ' +
+        '(select * from user ) as a ' +
+        'join ' +
+        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
+        'on a.id in (b.l_id);';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
+
+// 테에에에스트 ㅋ
+// app.get('/users/:id/:num', function (req, res) {
+//     var sql = 'select * from user where id != "' + req.params.id + '" limit ' + req.params.num;
+//     connection.query(sql, function (err, rows, fields) {
+//         res.json(rows);
+//     });
+// });
 
 // 유사도 점수를 target과 compare에 해당하는 레코드를 보내준다.
 app.get('/similar/:target/:compare', function (req, res) {
