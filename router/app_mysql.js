@@ -189,7 +189,7 @@ app.get('/game-rate/similar/:target/:compare', function (req, res) {
 });
 
 // similar 점수를 위한 target, compare 를 입력 받고 둘다 평가한 게임의 목록을 출력한다.
-app.get('/game-rates/:target/:compare', function (req, res) {
+app.get('/games/:target/:compare', function (req, res) {
     var sql = 'select * from game where title in (select a.gr_title from (select * from game_rate where gr_id = "' + req.params.target + '") as a ' +
         'join (select * from game_rate where gr_id = "' + req.params.compare + '") as b on a.gr_title = b.gr_title)';
     connection.query(sql, function (err, rows, fields) {
