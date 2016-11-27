@@ -180,7 +180,7 @@ app.get('/user/compare/:id', function (req, res) {
 // similar 점수를 위한 target, compare 를 입력 받고 그에 해당하는 점수와 평균을 보내준다.
 app.get('/game-rate/similar/:target/:compare', function (req, res) {
     var sql = 'select k_rate, l_rate, avgRate ' +
-        'from (SELECT KT.gr_title as game_title , KT.gr_id as k, KT.rate as k_rate, LT.gr_id as l, LT.rate as l_rateFROM (select * from game_rate where gr_id = "' + req.params.target + '") as KT , ' +
+        'from (SELECT KT.gr_title as game_title , KT.gr_id as k, KT.rate as k_rate, LT.gr_id as l, LT.rate as l_rate FROM (select * from game_rate where gr_id = "' + req.params.target + '") as KT , ' +
         '(select * from game_rate where gr_id = "' + req.params.compare + '") as LT where KT.gr_title in (LT.gr_title)) as exceptAVG ' +
         'join (select gr_title, round(avg(rate),1) as avgRate from game_rate group by gr_title) as rateAVG on exceptAVG.game_title = rateAVG.gr_title';
     connection.query(sql, function (err, rows, fields) {
