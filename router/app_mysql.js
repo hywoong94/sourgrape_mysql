@@ -143,7 +143,6 @@ app.get('/similar/:target/:compare', function (req, res) {
 // 해당 게임에 대한 5~1 까지 평점 갯수를 보내준다.
 app.get('/game-rates/game/:title', function (req, res) {
     var sql = 'select rate, count(*) as count from game_rate where gr_title = "' + req.params.title + '" group by rate order by rate desc';
-    console.log("test : " + sql);
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
