@@ -141,7 +141,6 @@ app.get('/game-rates/game/:title', function (req, res) {
     var sql = 'select rate, count(*) as count from game_rate where gr_title = "' + req.params.title + '" group by rate order by rate desc';
     console.log("test : " + sql);
     connection.query(sql, function (err, rows, fields) {
-        console.log(sql);
         res.json(rows);
     });
 });
@@ -191,7 +190,7 @@ app.post('/users', function (req, res) {
     });
 });
 
-// 진행중...
+// 로그인한 사용자의 게임 평가 입력.
 app.post('/game-rate/insert', function (req, res) {
     var game_rate = {
         "id": req.body.id,
@@ -204,10 +203,8 @@ app.post('/game-rate/insert', function (req, res) {
         if(!err){
             res.json(game_rate);
         }
-        console.log("");
     });
-    // res.json(game_rate);
-}); // 일단 나중에....
+});
 
 app.listen(app.get('port'), function () {
     console.log("connection 3000 port");
