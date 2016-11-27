@@ -136,6 +136,42 @@ app.get('/similar/:target/:compare', function (req, res) {
     });
 });
 
+// 해당 게임에 대한 5~1 까지 평점 갯수를 보내준다.
+app.get('/game-rates/game/:title', function (req, res) {
+    var sql = 'select rate, count(*) as count from game_rate where gr_title = "' + req.params.title + '" group by rate order by rate desc';
+    console.log("test : " + sql);
+    connection.query(sql, function (err, rows, fields) {
+        console.log(sql);
+        res.json(rows);
+    });
+});
+
+// 해당 게임에 대한 원하는 평점의 갯수를 보내준다.
+app.get('/game-rates/game/:title/:rate', function (req, res) {
+    var sql = 'select count(*) as count from game_rate where gr_title = "' + req.params.title + '" AND rate = ' + req.params.rate + ';';
+    connection.query(sql, function (err, rows, fields) {
+        res.json(rows);
+    });
+});
+
+// 해당 유저가 내린 5~1 까지 평점 갯수를 보내준다.
+app.get('/game-rates/user/:id', function (req, res) {
+    var sql = 'select rate, count(*) as count from game_rate where gr_id = "' + req.params.id + '" group by rate order by rate desc';
+    connection.query(sql, function (err, rows, fields) {
+        res.json(rows);
+    });
+});
+
+// 해당 유저가 내린 원하는 평점의 갯수를 보내준다.
+app.get('/game-rates/user/:id/:rate', function (req, res) {
+    var sql = 'select count(*) as count from game_rate where gr_id = "' + req.params.id + '" AND rate = ' + req.params.rate + ';';
+    connection.query(sql, function (err, rows, fields) {
+        res.json(rows);
+    });
+});
+
+
+////////////////////////// post ///////////////////////////
 // 유저의 정보를 입력한다.
 app.post('/users', function (req, res) {
     var user = {
@@ -156,20 +192,21 @@ app.post('/users', function (req, res) {
 });
 
 // 진행중...
-app.post('/game-ratetest', function (req, res) {
+app.post('/game-rate/insert', function (req, res) {
     var game_rate = {
         "id": req.body.id,
         "title": req.body.title,
         "rate": req.body.rate
-        // "date" : req.body.date
+        "date" : req.body.date
     };
-    var sql = 'insert into game_rate values (?,?,?)';
-    // connection.query(sql, req.params.title, req.params.id, req.params.rate,   function (err, fields) {
-    //     if(!err){
-    //         res.json(game_rate);
-    //     }
-    // });
-    res.json(game_rate);
+    var sql = 'insert into game_rate values ("' + req.body.title + '","' + req.body.id + '",' + req.body.rate +', "' + req.body.date +'")';
+    connection.query(sql, function (err, fields) {
+        if(!err){
+            res.json(game_rate);
+        }
+        console.log("");
+    });
+    // res.json(game_rate);
 }); // 일단 나중에....
 
 app.listen(app.get('port'), function () {
