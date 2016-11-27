@@ -196,7 +196,7 @@ app.post('/game-rate/insert', function (req, res) {
     var game_rate = {
         "id": req.body.id,
         "title": req.body.title,
-        "rate": req.body.rate
+        "rate": req.body.rate,
         "date" : req.body.date
     };
     var sql = 'insert into game_rate values ("' + req.body.title + '","' + req.body.id + '",' + req.body.rate +', "' + req.body.date +'")';
