@@ -113,7 +113,7 @@ app.get('/users/:id/:num', function (req, res) {
     var sql = 'select a.* from ' +
         '(select * from user ) as a ' +
         'join ' +
-        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by simScore desc limit ' + req.params.num + ') as b ' +
+        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by sim_score desc limit ' + req.params.num + ') as b ' +
         'on a.id in (b.l_id);';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
