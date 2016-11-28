@@ -29,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="235" column="13" selection-start-line="235" selection-start-column="13" selection-end-line="235" selection-end-column="13" />
+            <state relative-caret-position="361">
+              <caret line="233" column="13" selection-start-line="233" selection-start-column="13" selection-end-line="233" selection-end-column="13" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -249,14 +249,7 @@
       <workItem from="1480245095774" duration="3506000" />
       <workItem from="1480269064821" duration="2569000" />
       <workItem from="1480273370337" duration="123000" />
-      <workItem from="1480306013731" duration="2651000" />
-    </task>
-    <task id="LOCAL-00012" summary="game/:title&#10;game-rate/:title 추가.">
-      <created>1479481993711</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1479481993711</updated>
+      <workItem from="1480306013731" duration="2693000" />
     </task>
     <task id="LOCAL-00013" summary="game/:title&#10;game-rate/:title 추가.">
       <created>1479482053316</created>
@@ -594,11 +587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480308597458</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="game-rate/insert 수정">
+      <created>1480308813385</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1480308813385</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107818000" />
+    <option name="totallyTimeSpent" value="107860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="113" y="173" width="1382" height="784" extended-state="0" />
@@ -933,8 +933,8 @@
     <entry file="file://$PROJECT_DIR$/../nodejs/basicServer.js" />
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="235" column="13" selection-start-line="235" selection-start-column="13" selection-end-line="235" selection-end-column="13" />
+        <state relative-caret-position="361">
+          <caret line="233" column="13" selection-start-line="233" selection-start-column="13" selection-end-line="233" selection-end-column="13" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>

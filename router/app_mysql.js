@@ -222,16 +222,14 @@ app.post('/users', function (req, res) {
 // 로그인한 사용자의 게임 평가 입력.
 app.post('/game-rate/insert', function (req, res) {
     var game_rate = {
-        "id": req.body.id,
-        "title": req.body.title,
+        "id": req.body.gr_id,
+        "title": req.body.gr_title,
         "rate": req.body.rate,
-        "date" : req.body.date
+        "date" : req.body.rate_date
     };
 var sql = 'insert into game_rate values ("' + req.body.title + '","' + req.body.id + '",' + req.body.rate +', "' + req.body.date +'")';
-    console.log(sql);
     connection.query(sql, function (err, fields) {
         if(!err){
-            console.log("in con");
             res.json(game_rate);
         }else
             console.log("error");
