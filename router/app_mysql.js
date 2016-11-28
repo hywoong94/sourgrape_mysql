@@ -227,9 +227,11 @@ app.post('/game-rate/insert', function (req, res) {
         "rate": req.body.rate,
         "date" : req.body.date
     };
-    var sql = 'insert into game_rate values ("' + req.body.title + '","' + req.body.id + '",' + req.body.rate +', "' + req.body.date +'")';
+var sql = 'insert into game_rate values ("' + req.body.title + '","' + req.body.id + '",' + req.body.rate +', "' + req.body.date +'")';
+    console.log(sql);
     connection.query(sql, function (err, fields) {
         if(!err){
+            console.log("in con");
             res.json(game_rate);
         }
     });
