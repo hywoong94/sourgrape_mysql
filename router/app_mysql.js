@@ -211,8 +211,8 @@ app.get('/calcul_simScore/:K/:L', function (req, res) {
             k_deviation += (k - avg) * (k - avg);
             l_deviation += (l - avg) * (l - avg);
         }
-        var result = sum / (Math.sqrt(k_deviation) * Math.sqrt(l_deviation));
-        res.json(result);
+        var sim_score = sum / (Math.sqrt(k_deviation) * Math.sqrt(l_deviation));
+        res.json(sim_score);
         // //sql = 'insert into sim_score values("' + req.params.K + '","' + req.params.L + '",' + result + ')';
         // connection.query(sql,function(err,rows,fields){
         //     res.json();
