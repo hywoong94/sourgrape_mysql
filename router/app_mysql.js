@@ -56,8 +56,8 @@ app.get('/games', function (req, res) {
 app.get('/game-rate', function (req, res) {
     //var sql = 'SELECT gr_title, gr_id, round(avg(rate),1) as rate, rate_date FROM game_rate group by gr_title order by rate desc;';
     var now = moment(new Date());
-    var oneYearAgoDate = now.subtract(1,'years').format("YYYY-MM-DD");
-    var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate +'" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate +'" group by gr_title) as ta where ta.rateCount > 30 order by rate  desc, ta.rateCount desc';
+    var oneYearAgoDate = now.subtract(1, 'years').format("YYYY-MM-DD");
+    var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate + '" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate + '" group by gr_title) as ta where ta.rateCount > 30 order by rate  desc, ta.rateCount desc';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
@@ -71,7 +71,7 @@ app.get('/game/:title', function (req, res) {
     });
 });
 
-// 타이틀에 해당하는 게임 평가 정보와 평균을 보내준다.
+// 타이틀에 해당하는 게임 평균을 보내준다.
 app.get('/game-rate/:title', function (req, res) {
     var sql = 'select gr_title, gr_id, round(avg(rate),1) as rate, rate_date from game_rate where gr_title = "' + req.params.title + '"';
     connection.query(sql, function (err, rows, fields) {
@@ -112,33 +112,13 @@ app.get('/user/:id', function (req, res) {
     });
 });
 
-// 아이디에 해당하는 유저와 유사도가 비슷한 유저들을 num만큼 보내준다.
-app.get('/users/:id/:num', function (req, res) {
-    var sql = 'select a.* from ' +
-        '(select * from user ) as a ' +
-        'join ' +
-        '(SELECT * FROM sim_score where k_id = "' + req.params.id + '" order by sim_score desc limit ' + req.params.num + ') as b ' +
-        'on a.id in (b.l_id);';
-    connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
-    });
-});
-
-// 테에에에스트 ㅋ
-// app.get('/users/:id/:num', function (req, res) {
-//     var sql = 'select * from user where id != "' + req.params.id + '" limit ' + req.params.num;
+// 유사도 점수를 target과 compare에 해당하는 레코드를 보내준다.
+// app.get('/similar/:target/:compare', function (req, res) {
+//     var sql = 'select * from sim_score where k_id = "' + req.params.target + '" AND l_id = "' + req.params.compare + '"';
 //     connection.query(sql, function (err, rows, fields) {
 //         res.json(rows);
 //     });
 // });
-
-// 유사도 점수를 target과 compare에 해당하는 레코드를 보내준다.
-app.get('/similar/:target/:compare', function (req, res) {
-    var sql = 'select * from sim_score where k_id = "' + req.params.target + '" AND l_id = "' + req.params.compare + '"';
-    connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
-    });
-});
 
 // 해당 게임에 대한 5~1 까지 평점 갯수를 보내준다.
 app.get('/game-rates/game/:title', function (req, res) {
@@ -173,30 +153,70 @@ app.get('/game-rates/user/:id/:rate', function (req, res) {
 });
 
 // 로그인한 유저가 평가한 게임에 하나라도 평점을 남긴 애들의 목록을 보내준다.
-app.get('/user/compare/:id', function (req, res) {
-    var sql = 'select DISTINCT gr_id from game_rate where gr_title in (select gr_title from game_rate where gr_id = "' + req.params.id + '") AND gr_id != "' + req.params.id + '"';
-    connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
-    });
-});
+// app.get('/user/compare/:id', function (req, res) {
+//     var sql = 'select DISTINCT gr_id from game_rate where gr_title in (select gr_title from game_rate where gr_id = "' + req.params.id + '") AND gr_id != "' + req.params.id + '"';
+//     connection.query(sql, function (err, rows, fields) {
+//         res.json(rows);
+//     });
+// });
 
 // similar 점수를 위한 target, compare 를 입력 받고 그에 해당하는 점수와 평균을 보내준다.
-app.get('/game-rate/similar/:target/:compare', function (req, res) {
-    var sql = 'select l, k_rate, l_rate, avgRate ' +
-        'from (SELECT KT.gr_title as game_title , KT.gr_id as k, KT.rate as k_rate, LT.gr_id as l, LT.rate as l_rate FROM (select * from game_rate where gr_id = "' + req.params.target + '") as KT , ' +
-        '(select * from game_rate where gr_id = "' + req.params.compare + '") as LT where KT.gr_title in (LT.gr_title)) as exceptAVG ' +
-        'join (select gr_title, round(avg(rate),1) as avgRate from game_rate group by gr_title) as rateAVG on exceptAVG.game_title = rateAVG.gr_title';
+// app.get('/game-rate/similar/:target/:compare', function (req, res) {
+//     var sql = 'select l, k_rate, l_rate, avgRate ' +
+//         'from (SELECT KT.gr_title as game_title , KT.gr_id as k, KT.rate as k_rate, LT.gr_id as l, LT.rate as l_rate FROM (select * from game_rate where gr_id = "' + req.params.target + '") as KT , ' +
+//         '(select * from game_rate where gr_id = "' + req.params.compare + '") as LT where KT.gr_title in (LT.gr_title)) as exceptAVG ' +
+//         'join (select gr_title, round(avg(rate),1) as avgRate from game_rate group by gr_title) as rateAVG on exceptAVG.game_title = rateAVG.gr_title';
+//     connection.query(sql, function (err, rows, fields) {
+//         res.json(rows);
+//     });
+// });
+
+// similar 점수를 위한 target, compare 를 입력 받고 둘다 평가한 게임의 목록을 출력한다.
+// app.get('/games/:target/:compare', function (req, res) {
+//     var sql = 'select * from game where title in (select a.gr_title from (select * from game_rate where gr_id = "' + req.params.target + '") as a ' +
+//         'join (select * from game_rate where gr_id = "' + req.params.compare + '") as b on a.gr_title = b.gr_title)';
+//     connection.query(sql, function (err, rows, fields) {
+//         res.json(rows);
+//     });
+// });
+
+// sim score에 필요한 L user list 를 반환한다.
+app.get('/users/:id/:num', function (req, res) {
+    var sql = 'select gr_id as id, count(*) as compareC from game_rate where gr_title in (select gr_title from game_rate where gr_id = "' + req.params.id + '") AND gr_id != "' + req.params.id + '" group by gr_id order by compareC desc limit ' + req.params.num;
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
 });
 
-// similar 점수를 위한 target, compare 를 입력 받고 둘다 평가한 게임의 목록을 출력한다.
-app.get('/games/:target/:compare', function (req, res) {
-    var sql = 'select * from game where title in (select a.gr_title from (select * from game_rate where gr_id = "' + req.params.target + '") as a ' +
-        'join (select * from game_rate where gr_id = "' + req.params.compare + '") as b on a.gr_title = b.gr_title)';
+// sim score 계산
+app.get('/calcul_simScore/:K/:L', function (req, res) {
+    var sql = 'select k_rate, l_rate, avgRate ' +
+        'from (SELECT KT.gr_title as game_title , KT.gr_id as k, KT.rate as k_rate, LT.gr_id as l, LT.rate as l_rate FROM (select * from game_rate where gr_id = "' + req.params.K + '") as KT , ' +
+        '(select * from game_rate where gr_id = "' + req.params.L + '") as LT  where KT.gr_title in (LT.gr_title)) as exceptAVG ' +
+        'join ' +
+        '(select gr_title, round(avg(rate),1) as avgRate from game_rate group by gr_title) as rateAVG ' +
+        'on exceptAVG.game_title = rateAVG.gr_title limit 20';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        var k;
+        var l;
+        var avg;
+        var sum = 0;
+        var k_deviation = 0;
+        var l_deviation = 0;
+        for (var i = 0; i < rows.length; i++) {
+            k = rows[i].k_rate;
+            l = rows[i].l_rate;
+            avg = rows[i].avgRate;
+            sum += (k - avg) * (l - avg);
+            k_deviation += (k - avg) * (k - avg);
+            l_deviation += (l - avg) * (l - avg);
+        }
+        var result = sum / (Math.sqrt(k_deviation) * Math.sqrt(l_deviation));
+        res.json(result);
+        // //sql = 'insert into sim_score values("' + req.params.K + '","' + req.params.L + '",' + result + ')';
+        // connection.query(sql,function(err,rows,fields){
+        //     res.json();
+        // });
     });
 });
 
@@ -226,13 +246,13 @@ app.post('/game-rate/insert', function (req, res) {
         "id": req.body.gr_id,
         "title": req.body.gr_title,
         "rate": req.body.rate,
-        "date" : req.body.rate_date
+        "date": req.body.rate_date
     };
-var sql = 'insert into game_rate values ("' + req.body.gr_id + '","' + req.body.gr_title + '",' + req.body.rate +', "' + req.body.rate_date +'")';
+    var sql = 'insert into game_rate values ("' + req.body.gr_id + '","' + req.body.gr_title + '",' + req.body.rate + ', "' + req.body.rate_date + '")';
     connection.query(sql, function (err, fields) {
-        if(!err){
+        if (!err) {
             res.json(game_rate);
-        }else
+        } else
             console.log("error");
     });
 });
