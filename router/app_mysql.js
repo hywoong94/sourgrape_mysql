@@ -228,8 +228,10 @@ app.post('/game-rate/insert', function (req, res) {
         "date" : req.body.rate_date
     };
 var sql = 'insert into game_rate values ("' + req.body.gr_title + '","' + req.body.gr_id + '",' + req.body.rate +', "' + req.body.rate_date +'")';
+    console.log(sql);
     connection.query(sql, function (err, fields) {
         if(!err){
+            console.log("in con");
             res.json(game_rate);
         }else
             console.log("error");
