@@ -227,7 +227,7 @@ app.post('/game-rate/insert', function (req, res) {
         "rate": req.body.rate,
         "date" : req.body.rate_date
     };
-var sql = 'insert into game_rate values ("' + req.body.title + '","' + req.body.id + '",' + req.body.rate +', "' + req.body.date +'")';
+var sql = 'insert into game_rate values ("' + req.body.gr_title + '","' + req.body.gr_id + '",' + req.body.rate +', "' + req.body.rate_date +'")';
     connection.query(sql, function (err, fields) {
         if(!err){
             res.json(game_rate);

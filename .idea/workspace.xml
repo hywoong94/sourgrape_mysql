@@ -249,14 +249,7 @@
       <workItem from="1480245095774" duration="3506000" />
       <workItem from="1480269064821" duration="2569000" />
       <workItem from="1480273370337" duration="123000" />
-      <workItem from="1480306013731" duration="2693000" />
-    </task>
-    <task id="LOCAL-00013" summary="game/:title&#10;game-rate/:title 추가.">
-      <created>1479482053316</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1479482053316</updated>
+      <workItem from="1480306013731" duration="2727000" />
     </task>
     <task id="LOCAL-00014" summary="game/:title&#10;game-rate/:title 수정">
       <created>1479486424529</created>
@@ -594,11 +587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480308813385</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="game-rate/insert 수정2">
+      <created>1480308855966</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1480308855966</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107860000" />
+    <option name="totallyTimeSpent" value="107894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="113" y="173" width="1382" height="784" extended-state="0" />
@@ -636,7 +636,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cal-simScore delete" />
     <MESSAGE value="change database sourgrape to testhost" />
     <MESSAGE value="change database testhost to sourgrape" />
     <MESSAGE value="delete simScore" />
@@ -661,7 +660,8 @@
     <MESSAGE value="전체랭킹 쿼리 수정(최근 1년데이터 중 30명이상 평가한 게임의 평점과 평가수 별 정렬)" />
     <MESSAGE value="자잘한 논리적 오류 수정" />
     <MESSAGE value="game-rate/insert 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="game-rate/insert 수정" />
+    <MESSAGE value="game-rate/insert 수정2" />
+    <option name="LAST_COMMIT_MESSAGE" value="game-rate/insert 수정2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
