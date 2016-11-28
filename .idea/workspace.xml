@@ -29,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="207" column="38" selection-start-line="207" selection-start-column="38" selection-end-line="207" selection-end-column="38" />
+            <state relative-caret-position="342">
+              <caret line="233" column="32" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -250,14 +250,7 @@
       <workItem from="1480269064821" duration="2569000" />
       <workItem from="1480273370337" duration="123000" />
       <workItem from="1480306013731" duration="4244000" />
-      <workItem from="1480314675649" duration="203000" />
-    </task>
-    <task id="LOCAL-00017" summary="game-rate/:title/:id 추가&#10;game-rate/:id 추가&#10;user/:id 추가">
-      <created>1479831712335</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1479831712335</updated>
+      <workItem from="1480314675649" duration="326000" />
     </task>
     <task id="LOCAL-00018" summary="db sourgrape -&gt; testhost로 변경">
       <created>1479898508799</created>
@@ -595,11 +588,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480310453565</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="users/insert 추가">
+      <created>1480314924224</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1480314924224</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109614000" />
+    <option name="totallyTimeSpent" value="109737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="231" y="175" width="1382" height="784" extended-state="0" />
@@ -637,7 +637,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="/users/:id/:num 수정" />
     <MESSAGE value="/users/:id/:num 수정2" />
     <MESSAGE value="db 연결 수정" />
     <MESSAGE value="db 연결 수정 잘되던게 왜 안될까.." />
@@ -662,7 +661,8 @@
     <MESSAGE value="game-rate/insert 수정3" />
     <MESSAGE value="game-rate/insert 수정4" />
     <MESSAGE value="id랑 title 위치 바꿈" />
-    <option name="LAST_COMMIT_MESSAGE" value="id랑 title 위치 바꿈" />
+    <MESSAGE value="users/insert 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="users/insert 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -944,8 +944,8 @@
     <entry file="file://$PROJECT_DIR$/../nodejs/basicServer.js" />
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="207" column="38" selection-start-line="207" selection-start-column="38" selection-end-line="207" selection-end-column="38" />
+        <state relative-caret-position="342">
+          <caret line="233" column="32" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
