@@ -7,16 +7,16 @@ var mysql = require('mysql');
 var moment = require('moment');
 //multer : file upload
 var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '1234',
-    // database: 'testhost'
-    database: 'sourgrape'
-
     // host: 'localhost',
     // user: 'root',
-    // password: 'hywoong94!',
+    // password: '1234',
+    // // database: 'testhost'
     // database: 'sourgrape'
+
+    host: 'localhost',
+    user: 'root',
+    password: 'hywoong94!',
+    database: 'sourgrape'
 });
 var app = express();
 
