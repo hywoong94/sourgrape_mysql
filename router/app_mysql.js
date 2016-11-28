@@ -199,9 +199,10 @@ app.get('/games/:target/:compare', function (req, res) {
         res.json(rows);
     });
 });
+
 ////////////////////////// post ///////////////////////////
 // 유저의 정보를 입력한다.
-app.post('/users', function (req, res) {
+app.post('/users/insert', function (req, res) {
     var user = {
         "id": req.body.id,
         "password": req.body.password,
