@@ -233,7 +233,8 @@ var sql = 'insert into game_rate values ("' + req.body.title + '","' + req.body.
         if(!err){
             console.log("in con");
             res.json(game_rate);
-        }
+        }else
+            console.log("error");
     });
 });
 
