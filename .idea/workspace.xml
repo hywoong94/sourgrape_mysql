@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9bcdc7b1-f1e0-4f99-9efd-fa8cd69daf7e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/app_mysql.js" afterPath="$PROJECT_DIR$/router/app_mysql.js" />
     </list>
     <ignored path="final_sourgrape.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3610">
-              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            <state relative-caret-position="380">
+              <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -252,14 +251,7 @@
       <workItem from="1480306013731" duration="4244000" />
       <workItem from="1480314675649" duration="405000" />
       <workItem from="1480317388548" duration="12854000" />
-      <workItem from="1480382761832" duration="2341000" />
-    </task>
-    <task id="LOCAL-00022" summary="post /users 수정3">
-      <created>1479905788964</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1479905788964</updated>
+      <workItem from="1480382761832" duration="2505000" />
     </task>
     <task id="LOCAL-00023" summary="avg 나오는 부분들 수정">
       <created>1479908195021</created>
@@ -597,11 +589,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480395226002</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="테스트 데이터 연결 ㅅㅂ">
+      <created>1480395516144</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1480395516144</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125011000" />
+    <option name="totallyTimeSpent" value="125175000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -639,7 +638,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="DB 연결에는 이상 없었음. (mysql 권한 추가)&#10;simiar/:target/:comapre 추가" />
     <MESSAGE value="DB 실데이터베이스 전환&#10;주석추가!!!" />
     <MESSAGE value="users/:id/:num&#10;test용" />
     <MESSAGE value="DB 변경" />
@@ -664,7 +662,8 @@
     <MESSAGE value="거의 완성본...." />
     <MESSAGE value="/user/:id/:num&#10;/calcul_simScore/:K/:L 추가." />
     <MESSAGE value="테스트 데이터 연결" />
-    <option name="LAST_COMMIT_MESSAGE" value="테스트 데이터 연결" />
+    <MESSAGE value="테스트 데이터 연결 ㅅㅂ" />
+    <option name="LAST_COMMIT_MESSAGE" value="테스트 데이터 연결 ㅅㅂ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -966,8 +965,8 @@
     <entry file="file://$PROJECT_DIR$/../nodejs/basicServer.js" />
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3610">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        <state relative-caret-position="380">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
