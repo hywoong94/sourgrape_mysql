@@ -29,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="61" column="253" selection-start-line="61" selection-start-column="253" selection-end-line="61" selection-end-column="253" />
+            <state relative-caret-position="171">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -64,10 +64,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-49" />
+    <option name="y" value="5" />
+    <option name="width" value="937" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -252,14 +252,7 @@
       <workItem from="1480306013731" duration="4244000" />
       <workItem from="1480314675649" duration="405000" />
       <workItem from="1480317388548" duration="12854000" />
-      <workItem from="1480382761832" duration="3504000" />
-    </task>
-    <task id="LOCAL-00026" summary="users/id/num 수정">
-      <created>1479910010145</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1479910010145</updated>
+      <workItem from="1480382761832" duration="3932000" />
     </task>
     <task id="LOCAL-00027" summary="test simScore">
       <created>1479996565724</created>
@@ -597,18 +590,25 @@
       <option name="project" value="LOCAL" />
       <updated>1480396577675</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="테스트 데이터 연결 ㅅㅂ3">
+      <created>1480396683743</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1480396683744</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126174000" />
+    <option name="totallyTimeSpent" value="126602000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-49" y="5" width="937" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07715582" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4387292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11630559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21436717" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3325868" sideWeight="0.502445" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -639,7 +639,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="users/:id/:num&#10;test용" />
     <MESSAGE value="DB 변경" />
     <MESSAGE value="get(game-rates/game/:title)&#10;get(game-rates/game/:title/:rate)&#10;get(game-rates/user/:id)&#10;get(game-rates/user/:id/rate)&#10;post(game-rate/insert)&#10;&#10;추가" />
     <MESSAGE value="오류 수정" />
@@ -664,7 +663,8 @@
     <MESSAGE value="테스트 데이터 연결" />
     <MESSAGE value="테스트 데이터 연결 ㅅㅂ" />
     <MESSAGE value="테스트 데이터 연결 ㅅㅂ2" />
-    <option name="LAST_COMMIT_MESSAGE" value="테스트 데이터 연결 ㅅㅂ2" />
+    <MESSAGE value="테스트 데이터 연결 ㅅㅂ3" />
+    <option name="LAST_COMMIT_MESSAGE" value="테스트 데이터 연결 ㅅㅂ3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -982,8 +982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="61" column="253" selection-start-line="61" selection-start-column="253" selection-end-line="61" selection-end-column="253" />
+        <state relative-caret-position="171">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
