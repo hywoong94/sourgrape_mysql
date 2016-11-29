@@ -9,9 +9,9 @@ var moment = require('moment');
 var connection = mysql.createConnection({
     // host: 'localhost',
     host: '14.63.227.88',
-    user: 'root',
+    user: 'jong',
     // password: '1234',
-    password: 'P@sswOrd',
+    password: 'test',
     // database: 'testhost'
     database: 'sourgrape'
 
