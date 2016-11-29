@@ -29,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+            <state relative-caret-position="133">
+              <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -252,14 +252,7 @@
       <workItem from="1480306013731" duration="4244000" />
       <workItem from="1480314675649" duration="405000" />
       <workItem from="1480317388548" duration="12854000" />
-      <workItem from="1480382761832" duration="4993000" />
-    </task>
-    <task id="LOCAL-00032" summary="cal-simScore 수정">
-      <created>1480000493106</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1480000493106</updated>
+      <workItem from="1480382761832" duration="5210000" />
     </task>
     <task id="LOCAL-00033" summary="cal-simScore test">
       <created>1480000969436</created>
@@ -597,11 +590,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480398001624</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="시발3">
+      <created>1480398181558</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1480398181558</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127663000" />
+    <option name="totallyTimeSpent" value="127880000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -639,7 +639,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="불필요 console.log 삭제" />
     <MESSAGE value="DB change" />
     <MESSAGE value="DB change, 오류수정" />
     <MESSAGE value="/user/compare/:id&#10;/game-rate/similar/:target/:compare 추가" />
@@ -664,7 +663,8 @@
     <MESSAGE value="tqtqtq" />
     <MESSAGE value="시발" />
     <MESSAGE value="시발2" />
-    <option name="LAST_COMMIT_MESSAGE" value="시발2" />
+    <MESSAGE value="시발3" />
+    <option name="LAST_COMMIT_MESSAGE" value="시발3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -982,8 +982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+        <state relative-caret-position="133">
+          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>

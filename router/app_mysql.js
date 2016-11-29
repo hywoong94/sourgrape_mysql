@@ -56,10 +56,10 @@ app.get('/games', function (req, res) {
 
 // 게임 목록과 그에 대한 평균을 보내준다. (전체랭킹) // 최근 1년의 데이터 중 30명 이상 평가를 한 게임의 평점 내림차순, 평점의 수 내림차순으로 정렬한 전체 랭킹.
 app.get('/game-rate', function (req, res) {
-    var sql = 'SELECT gr_title, gr_id, round(avg(rate),1) as rate, rate_date FROM game_rate group by gr_title order by rate desc;';
+    //var sql = 'SELECT gr_title, gr_id, round(avg(rate),1) as rate, rate_date FROM game_rate group by gr_title order by rate desc;';
     var now = moment(new Date());
-    var oneYearAgoDate = now.subtract(100, 'years').format("YYYY-MM-DD");
-    // var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate + '" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate + '" group by gr_title) as ta where ta.rateCount > 0 order by rate  desc, ta.rateCount desc';
+    var oneYearAgoDate = now.subtract(1, 'years').format("YYYY-MM-DD");
+    var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate + '" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate + '" group by gr_title) as ta where ta.rateCount > 0 order by rate  desc, ta.rateCount desc';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
