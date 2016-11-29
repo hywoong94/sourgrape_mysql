@@ -29,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="60" column="73" selection-start-line="60" selection-start-column="73" selection-end-line="60" selection-end-column="73" />
+            <state relative-caret-position="247">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -252,14 +252,7 @@
       <workItem from="1480306013731" duration="4244000" />
       <workItem from="1480314675649" duration="405000" />
       <workItem from="1480317388548" duration="12854000" />
-      <workItem from="1480382761832" duration="6060000" />
-    </task>
-    <task id="LOCAL-00035" summary="cal-simScore delete">
-      <created>1480001173616</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1480001173616</updated>
+      <workItem from="1480382761832" duration="6127000" />
     </task>
     <task id="LOCAL-00036" summary="change database testhost to sourgrape">
       <created>1480071385376</created>
@@ -597,11 +590,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480398475514</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="짱꼴라 시발꺼.">
+      <created>1480399522570</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1480399522570</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128730000" />
+    <option name="totallyTimeSpent" value="128797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -639,7 +639,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="DB change, 오류수정" />
     <MESSAGE value="/user/compare/:id&#10;/game-rate/similar/:target/:compare 추가" />
     <MESSAGE value="오류수정" />
     <MESSAGE value="simiar 수정" />
@@ -664,7 +663,8 @@
     <MESSAGE value="시발2" />
     <MESSAGE value="시발3" />
     <MESSAGE value="갓동" />
-    <option name="LAST_COMMIT_MESSAGE" value="갓동" />
+    <MESSAGE value="짱꼴라 시발꺼." />
+    <option name="LAST_COMMIT_MESSAGE" value="짱꼴라 시발꺼." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -982,8 +982,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="60" column="73" selection-start-line="60" selection-start-column="73" selection-end-line="60" selection-end-column="73" />
+        <state relative-caret-position="247">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
