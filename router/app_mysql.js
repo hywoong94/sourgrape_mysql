@@ -59,7 +59,7 @@ app.get('/game-rate', function (req, res) {
     //var sql = 'SELECT gr_title, gr_id, round(avg(rate),1) as rate, rate_date FROM game_rate group by gr_title order by rate desc;';
     var now = moment(new Date());
     var oneYearAgoDate = now.subtract(1, 'years').format("YYYY-MM-DD");
-    var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate + '" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate + '" group by gr_title) as ta where ta.rateCount > 0 order by rate  desc, ta.rateCount desc';
+    var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate + '" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate + '" group by gr_title) as ta where ta.rateCount > 30 order by rate  desc, ta.rateCount desc';
     connection.query(sql, function (err, rows, fields) {
         res.json(rows);
     });
