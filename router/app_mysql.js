@@ -8,7 +8,7 @@ var moment = require('moment');
 //multer : file upload
 var connection = mysql.createConnection({
     // host: 'localhost',
-    host: '14.63.227.88:3306',
+    host: '14.63.227.88',
     user: 'root',
     // password: '1234',
     password: 'P@sswOrd',
