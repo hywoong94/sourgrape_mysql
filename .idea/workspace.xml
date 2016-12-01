@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9bcdc7b1-f1e0-4f99-9efd-fa8cd69daf7e" name="Default" comment="">
+    <list default="true" id="9bcdc7b1-f1e0-4f99-9efd-fa8cd69daf7e" name="Default" comment="로그 추가 및 테스트DB 연결">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/app_mysql.js" afterPath="$PROJECT_DIR$/router/app_mysql.js" />
     </list>
     <ignored path="final_sourgrape.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+            <state relative-caret-position="380">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -254,14 +253,7 @@
       <workItem from="1480317388548" duration="12854000" />
       <workItem from="1480382761832" duration="6730000" />
       <workItem from="1480597649656" duration="1352000" />
-      <workItem from="1480602360228" duration="1051000" />
-    </task>
-    <task id="LOCAL-00039" summary="delete simScore">
-      <created>1480095106874</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1480095106874</updated>
+      <workItem from="1480602360228" duration="1407000" />
     </task>
     <task id="LOCAL-00040" summary="/users/:id/:num 수정">
       <created>1480106871362</created>
@@ -599,11 +591,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480597987379</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="로그 추가 및 테스트DB 연결">
+      <created>1480603439106</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1480603439106</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131803000" />
+    <option name="totallyTimeSpent" value="132159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -641,7 +640,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="오류수정" />
     <MESSAGE value="simiar 수정" />
     <MESSAGE value="/game-rates/:target/:compare 추가" />
     <MESSAGE value="/game-rates/:target/:compare 삭제&#10;/games/:target/:compare 으로 변경" />
@@ -666,7 +664,8 @@
     <MESSAGE value="갓동" />
     <MESSAGE value="짱꼴라 시발꺼." />
     <MESSAGE value="DB 패스워드 변경..." />
-    <option name="LAST_COMMIT_MESSAGE" value="DB 패스워드 변경..." />
+    <MESSAGE value="로그 추가 및 테스트DB 연결" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그 추가 및 테스트DB 연결" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -995,8 +994,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        <state relative-caret-position="380">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
