@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9bcdc7b1-f1e0-4f99-9efd-fa8cd69daf7e" name="Default" comment="로그 추가 및 테스트DB 연결">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/app_mysql.js" afterPath="$PROJECT_DIR$/router/app_mysql.js" />
     </list>
     <ignored path="final_sourgrape.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="app_mysql.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="361">
+              <caret line="270" column="32" selection-start-line="270" selection-start-column="32" selection-end-line="270" selection-end-column="32" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -253,14 +254,7 @@
       <workItem from="1480317388548" duration="12854000" />
       <workItem from="1480382761832" duration="6730000" />
       <workItem from="1480597649656" duration="1352000" />
-      <workItem from="1480602360228" duration="1407000" />
-    </task>
-    <task id="LOCAL-00040" summary="/users/:id/:num 수정">
-      <created>1480106871362</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1480106871362</updated>
+      <workItem from="1480602360228" duration="2061000" />
     </task>
     <task id="LOCAL-00041" summary="/users/:id/:num 수정2">
       <created>1480107064126</created>
@@ -598,11 +592,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480603439106</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="로그 추가 및 테스트DB 연결">
+      <created>1480603790077</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1480603790077</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132159000" />
+    <option name="totallyTimeSpent" value="132813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -994,8 +995,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/router/app_mysql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="361">
+          <caret line="270" column="32" selection-start-line="270" selection-start-column="32" selection-end-line="270" selection-end-column="32" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>

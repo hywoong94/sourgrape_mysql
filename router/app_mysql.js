@@ -268,7 +268,7 @@ app.get('/calcul_simScore/:K/:L', function (req, res) {
             console.log("/calcul_simScore/:K/:L : " + err.toString());
         }
         else
-            res.json(rows);
+            res.json(sim_score);
     });
 });
 
