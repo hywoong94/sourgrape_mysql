@@ -11,8 +11,8 @@ var connection = mysql.createConnection({
     user : 'root',
     //password: '1234',
     password: 'hywoong94!',
-    // database: 'testhost'
-    database: 'sourgrape'
+    database: 'testhost'
+    // database: 'sourgrape'
 
     // host: 'localhost',
     // user: 'root',
@@ -23,7 +23,7 @@ var app = express();
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
     res.setHeader('Cache-Control', 'no-cache');
     next();
@@ -49,7 +49,11 @@ connection.connect(function (err) {
 app.get('/games', function (req, res) {
     var sql = 'select * from game';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/games : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -57,10 +61,14 @@ app.get('/games', function (req, res) {
 app.get('/game-rate', function (req, res) {
     //var sql = 'SELECT gr_title, gr_id, round(avg(rate),1) as rate, rate_date FROM game_rate group by gr_title order by rate desc;';
     var now = moment(new Date());
-    var oneYearAgoDate = now.subtract(1, 'years').format("YYYY-MM-DD");
-    var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate + '" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate + '" group by gr_title) as ta where ta.rateCount > 30 order by rate  desc, ta.rateCount desc';
+    var oneYearAgoDate = now.subtract(100, 'years').format("YYYY-MM-DD");
+    var sql = 'select gr_title, "EMPTYDATA", rate, "' + oneYearAgoDate + '" from (select gr_title, count(*) as rateCount, round(avg(rate),1) as rate from game_rate where rate_date > "' + oneYearAgoDate + '" group by gr_title) as ta where ta.rateCount > 0 order by rate  desc, ta.rateCount desc';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game-rate : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -68,7 +76,11 @@ app.get('/game-rate', function (req, res) {
 app.get('/game/:title', function (req, res) {
     var sql = 'select * from game where title = "' + req.params.title + '"';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game/:title : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -76,7 +88,11 @@ app.get('/game/:title', function (req, res) {
 app.get('/game-rate/:title', function (req, res) {
     var sql = 'select gr_title, gr_id, round(avg(rate),1) as rate, rate_date from game_rate where gr_title = "' + req.params.title + '"';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game-rate/:title : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -84,7 +100,11 @@ app.get('/game-rate/:title', function (req, res) {
 app.get('/search/:keyword', function (req, res) {
     var sql = 'select * from game where title like "%' + req.params.keyword + '%"';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/search/:keyword : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -92,7 +112,11 @@ app.get('/search/:keyword', function (req, res) {
 app.get('/game-rate/:title/:id', function (req, res) {
     var sql = 'select * from game_rate where gr_title = "' + req.params.title + '" AND gr_id = "' + req.params.id + '"';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game-rate/:title/:id : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -100,8 +124,11 @@ app.get('/game-rate/:title/:id', function (req, res) {
 app.get('/game-rates/:id', function (req, res) {
     var sql = 'select * from game_rate where gr_id = "' + req.params.id + '"';
     connection.query(sql, function (err, rows, fields) {
-        //res.send(rows);
-        res.json(rows);
+        if(err){
+            console.log("/game-rates/:id : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -109,7 +136,11 @@ app.get('/game-rates/:id', function (req, res) {
 app.get('/user/:id', function (req, res) {
     var sql = 'select * from user where id = "' + req.params.id + '"';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/user/:id : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -125,7 +156,11 @@ app.get('/user/:id', function (req, res) {
 app.get('/game-rates/game/:title', function (req, res) {
     var sql = 'select rate, count(*) as count from game_rate where gr_title = "' + req.params.title + '" group by rate order by rate desc';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game-rates/game/:title : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -133,7 +168,11 @@ app.get('/game-rates/game/:title', function (req, res) {
 app.get('/game-rates/game/:title/:rate', function (req, res) {
     var sql = 'select count(*) as count from game_rate where gr_title = "' + req.params.title + '" AND rate = ' + req.params.rate + ';';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game-rates/game/:title/:rate : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -141,7 +180,11 @@ app.get('/game-rates/game/:title/:rate', function (req, res) {
 app.get('/game-rates/user/:id', function (req, res) {
     var sql = 'select rate, count(*) as count from game_rate where gr_id = "' + req.params.id + '" group by rate order by rate desc';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game-rates/user/:id : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -149,7 +192,11 @@ app.get('/game-rates/user/:id', function (req, res) {
 app.get('/game-rates/user/:id/:rate', function (req, res) {
     var sql = 'select count(*) as count from game_rate where gr_id = "' + req.params.id + '" AND rate = ' + req.params.rate + ';';
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/game-rates/user/:id/:rate : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -185,7 +232,11 @@ app.get('/game-rates/user/:id/:rate', function (req, res) {
 app.get('/users/:id/:num', function (req, res) {
     var sql = 'select gr_id as id, count(*) as compareC from game_rate where gr_title in (select gr_title from game_rate where gr_id = "' + req.params.id + '") AND gr_id != "' + req.params.id + '" group by gr_id order by compareC desc limit ' + req.params.num;
     connection.query(sql, function (err, rows, fields) {
-        res.json(rows);
+        if(err){
+            console.log("/users/:id/:num : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -213,11 +264,11 @@ app.get('/calcul_simScore/:K/:L', function (req, res) {
             l_deviation += (l - avg) * (l - avg);
         }
         var sim_score = sum / (Math.sqrt(k_deviation) * Math.sqrt(l_deviation));
-        res.json(sim_score);
-        // //sql = 'insert into sim_score values("' + req.params.K + '","' + req.params.L + '",' + result + ')';
-        // connection.query(sql,function(err,rows,fields){
-        //     res.json();
-        // });
+        if(err){
+            console.log("/calcul_simScore/:K/:L : " + err.toString());
+        }
+        else
+            res.json(rows);
     });
 });
 
@@ -251,10 +302,11 @@ app.post('/game-rate/insert', function (req, res) {
     };
     var sql = 'insert into game_rate values ("' + req.body.gr_id + '","' + req.body.gr_title + '",' + req.body.rate + ', "' + req.body.rate_date + '")';
     connection.query(sql, function (err, fields) {
-        if (!err) {
+        if(err){
+            console.log("/game-rate/insert : " + err.toString());
+        }
+        else
             res.json(game_rate);
-        } else
-            console.log("error");
     });
 });
 
