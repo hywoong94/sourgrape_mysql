@@ -257,14 +257,7 @@
       <workItem from="1480602360228" duration="3534000" />
       <workItem from="1480741048811" duration="4848000" />
       <workItem from="1480833917493" duration="40000" />
-      <workItem from="1480856482875" duration="8000" />
-    </task>
-    <task id="LOCAL-00044" summary="DB 연결에는 이상 없었음. (mysql 권한 추가)&#10;simiar/:target/:comapre 추가">
-      <created>1480116376888</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1480116376888</updated>
+      <workItem from="1480856482875" duration="622000" />
     </task>
     <task id="LOCAL-00045" summary="DB 실데이터베이스 전환&#10;주석추가!!!">
       <created>1480172905558</created>
@@ -602,18 +595,25 @@
       <option name="project" value="LOCAL" />
       <updated>1480751835299</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="sourgrape DB">
+      <created>1480856505261</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1480856505261</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139182000" />
+    <option name="totallyTimeSpent" value="139796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07640587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15220049" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15220049" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3325868" sideWeight="0.502445" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -644,7 +644,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="전체랭킹 쿼리 수정(최근 1년데이터 중 30명이상 평가한 게임의 평점과 평가수 별 정렬)" />
     <MESSAGE value="자잘한 논리적 오류 수정" />
     <MESSAGE value="game-rate/insert 수정" />
     <MESSAGE value="game-rate/insert 수정2" />
@@ -669,7 +668,8 @@
     <MESSAGE value="오류 수정" />
     <MESSAGE value="test DB" />
     <MESSAGE value="testhost2 DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="testhost2 DB" />
+    <MESSAGE value="sourgrape DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="sourgrape DB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
